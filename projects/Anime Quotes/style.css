@@ -1,0 +1,46 @@
+:root {
+  --bg-color: rgb(39, 39, 39);
+  --text-color: rgb(179, 179, 179);
+  --border-color: rgb(136, 136, 255);
+  --button-hover-bg: rgb(136, 136, 255);
+  --button-hover-color: rgb(255, 255, 255);
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 1.25rem;
+  font-family: Arial, sans-serif;
+}
+
+button {
+  background-color: var(--bg-color);
+  color: var(--border-color);
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--button-hover-bg);
+  color: var(--button-hover-color);
+}
+
+#joke {
+  font-size: 1.25rem;
+}
+
+.container {
+  text-align: center;
+  border: 2px solid var(--border-color);
+  padding: 1rem 5rem;
+  border-radius: 0.5rem;
+}
