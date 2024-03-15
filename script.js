@@ -1,18 +1,22 @@
-// previous comments are deleted for readability , check the commit
+function getData(endpoint) {
+  const xhr = new XMLHttpRequest();
 
-const xhr = new XMLHttpRequest();
-xhr.open("GET", "https://api.github.com/users/mioKH/repos"); // real url
-xhr.onreadystatechange = function () {
-  if (xhr.readyState === 4 && xhr.status === 200) {
-    const data = JSON.parse(this.responseText);
+  xhr.open("Get", endpoint);
 
-    const ul = document.querySelector("ul");
-    for (let i = 0; i < data.length; i++) {
-      const li = document.createElement("li");
-      li.innerHTML = `<a href="${data[i].html_url}" target="_blank">${data[i].name}</a>`;
-      ul.appendChild(li);
-    } // somewhat of a practical example
-  }
-};
+  xhr.onreadystatechange = function () {
+    if (this.readyState === 4 && this.status === 200) {
+      const data = JSON.parse(this.responseText);
+      console.log(data);
+    }
+  };
 
-xhr.send();
+  setTimeout(() => {
+    // simulate delay from server
+    xhr.send();
+  }, Math.floor(Math.random() * 3000) + 1000); // random seconds 1 to 3 random in miliseconds
+}
+
+getData("./users.json");
+getData("./fruits.json");
+getData("./vegetables.json");
+// this gets the data in random order if you want it to be in order you can use callbacks 
