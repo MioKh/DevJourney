@@ -5,11 +5,18 @@
 // Ajax / XHR object
 
 const xhr = new XMLHttpRequest(); // create an instance of the XHR object
-xhr.open('GET', 'users.json'); // basically gets the data from the URL
-xhr.onreadystatechange = function() { 
-    if (xhr.readyState === 4 && xhr.status === 200) { // if the request is done and the status is 200 (200 is the code for a successful request)
-        console.log(JSON.parse(xhr.responseText)); 
-    }
-}
+xhr.open("GET", "users.json"); // basically gets the data from the URL
+xhr.onreadystatechange = function () {
+  if (xhr.readyState === 4 && xhr.status === 200) {
+    // if the request is done and the status is 200 (200 is the code for a successful request)
+    const data = JSON.parse(this.responseText);
+
+    data.forEach((user) => {
+      const li = document.createElement("li");
+      li.textContent = `${user.name} - age: ${user.age}`;
+      document.querySelector("ul").appendChild(li);
+    }); // display the data in the UI 
+  }
+};
 
 xhr.send(); // send the request ( without this, the request won't be sent and no data will be returned)

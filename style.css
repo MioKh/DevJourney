@@ -4,8 +4,8 @@
   box-sizing: border-box;
 }
 
-body{
-    background-color: rgb(39, 39, 39); 
-    /* I like dark mode */
+body {
+  background-color: rgb(39, 39, 39);
+  color: rgb(179, 179, 179);
+  /* I like dark mode */
 }
-
