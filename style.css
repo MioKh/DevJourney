@@ -7,5 +7,30 @@
 body {
   background-color: rgb(39, 39, 39);
   color: rgb(179, 179, 179);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   /* I like dark mode */
+}
+
+ul {
+  margin-top: 2rem;
+}
+
+li {
+  margin: 0.5rem 0;
+  font-size: 1.25rem;
+  list-style: none;
+}
+
+a {
+  color: rgb(136, 136, 255);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: rgb(255, 192, 0);
 }

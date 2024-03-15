@@ -1,22 +1,18 @@
-// I'll also be writing commets along the code for my future self and anyone else who may need it.
-// I'll try to minimize the comments as much as possible to make the code more readable.
-// I'll only be using comments to help me understand what the code is doing. in case i forget what it does
+// previous comments are deleted for readability , check the commit
 
-// Ajax / XHR object
-
-const xhr = new XMLHttpRequest(); // create an instance of the XHR object
-xhr.open("GET", "users.json"); // basically gets the data from the URL
+const xhr = new XMLHttpRequest();
+xhr.open("GET", "https://api.github.com/users/mioKH/repos"); // real url
 xhr.onreadystatechange = function () {
   if (xhr.readyState === 4 && xhr.status === 200) {
-    // if the request is done and the status is 200 (200 is the code for a successful request)
     const data = JSON.parse(this.responseText);
 
-    data.forEach((user) => {
+    const ul = document.querySelector("ul");
+    for (let i = 0; i < data.length; i++) {
       const li = document.createElement("li");
-      li.textContent = `${user.name} - age: ${user.age}`;
-      document.querySelector("ul").appendChild(li);
-    }); // display the data in the UI 
+      li.innerHTML = `<a href="${data[i].html_url}" target="_blank">${data[i].name}</a>`;
+      ul.appendChild(li);
+    } // somewhat of a practical example
   }
 };
 
-xhr.send(); // send the request ( without this, the request won't be sent and no data will be returned)
+xhr.send();
