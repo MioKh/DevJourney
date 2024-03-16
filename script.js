@@ -1,27 +1,37 @@
-// promises ( solves the problem of callback hell )
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
-// for reference
+// remember callback hell a few commits ago
 
-const getUser = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    let err = false;
-    if (err) {
-      reject("error");
-    } else {
-      resolve({
-        name: "John",
-        age: 30,
-      });
-    }
-  }, 1000);
-});
+function getData(endpoint) {
+  return new Promise((resolve, reject) => {
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", endpoint);
+    xhr.onreadystatechange = function () {
+      if (this.readyState === 4) {
+        if (this.status === 200) {
+          resolve(JSON.parse(this.responseText));
+        } else {
+          reject(`something went wrong ${this.status}`);
+        }
+      }
+    };
+    setTimeout(() => {
+      xhr.send();
+    }, Math.floor(Math.random() * 3000) + 1000);
+  });
+}
 
-getUser
+getData("./users.json")
+  .then((data) => {
+    console.log(data);
+    return getData("./fruits.json");
+  })
+  .then((data) => {
+    console.log(data);
+    return getData("./vegetables.json");
+  })
   .then((data) => {
     console.log(data);
   })
   .catch((err) => {
     console.log(err);
   });
-
-console.log("hello from global scope");
+  // fix callback hell using promise chaining
