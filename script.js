@@ -1,4 +1,5 @@
-// remember callback hell a few commits ago
+// using promise.all 
+// looks neater then promise chaining 
 
 function getData(endpoint) {
   return new Promise((resolve, reject) => {
@@ -19,19 +20,15 @@ function getData(endpoint) {
   });
 }
 
-getData("./users.json")
-  .then((data) => {
-    console.log(data);
-    return getData("./fruits.json");
-  })
-  .then((data) => {
-    console.log(data);
-    return getData("./vegetables.json");
-  })
+const userPromise = getData("./users.json");
+const fruitPromise = getData("./fruits.json");
+const vegetablePromise = getData("./vegetables.json");
+
+Promise.all([userPromise, fruitPromise, vegetablePromise])
   .then((data) => {
     console.log(data);
   })
   .catch((err) => {
     console.log(err);
   });
-  // fix callback hell using promise chaining
+  // looks better then promise chaining but this is optional at this point
