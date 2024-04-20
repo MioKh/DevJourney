@@ -3,96 +3,80 @@ const btn = document.querySelector(".btn");
 const img = document.querySelector("img");
 
 function findDominantColor(imageUrl, callback, numColors) {
-  let img = new Image();
-  img.crossOrigin = "Anonymous";
-   // etoo it fixes the CORS error which is like a privacy issue thing ?
-  img.onload = function () {
-    // onload event is fired when the image is loaded
-    let canvas = document.createElement("canvas");
-    let ctx = canvas.getContext("2d");
-    canvas.width = this.width;
-    canvas.height = this.height;
-    ctx.drawImage(this, 0, 0, canvas.width, canvas.height); // draw the image on the canvas
+    let img = new Image();
+    img.crossOrigin = "Anonymous";
+    img.onload = function() {
+        let canvas = document.createElement("canvas");
+        let ctx = canvas.getContext("2d");
+        canvas.width = this.width;
+        canvas.height = this.height;
+        ctx.drawImage(this, 0, 0, canvas.width, canvas.height);
 
-    let imageData = ctx.getImageData(0, 0, canvas.width, canvas.height).data; // get the image data ( thats why we need that crossOrigin: "Anonymous" cause this may cause errors )
+        let imageData = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
 
-    // Color quantization ( a more advanced and more optimized algorithm could be used ) but i am not sure how to , and i am not going to spend a lot of time learnig math to optimize it :D it works its fine :D maybe i will learn it later
-    let quantizedData = quantizeColors(imageData, numColors);
+        let quantizedData = quantizeColors(imageData, numColors);
 
-    // Count occurrences of each color in quantized data
-    let colorCounts = {};
-    quantizedData.forEach((rgba) => {
-      let hex =
-        "#" + ("000000" + rgbToHex(rgba[0], rgba[1], rgba[2])).slice(-6);
-      if (hex in colorCounts) {
-        colorCounts[hex]++;
-      } else {
-        colorCounts[hex] = 1;
-      }
-    });
+        let colorCounts = {};
+        quantizedData.forEach((rgba) => {
+            let hex = "#" + ("000000" + rgbToHex(rgba[0], rgba[1], rgba[2])).slice(-6);
+            colorCounts[hex] = (colorCounts[hex] || 0) + 1;
+        });
 
-    // Find the color with the highest count
-    let maxCount = 0;
-    let dominantColor = null;
-    for (let color in colorCounts) {
-      if (colorCounts[color] > maxCount) {
-        maxCount = colorCounts[color];
-        dominantColor = color;
-      }
-    }
-    callback(dominantColor);
-  };
-  img.src = imageUrl;
+        let maxCount = 0;
+        let dominantColor = null;
+        for (let color in colorCounts) {
+            if (colorCounts[color] > maxCount) {
+                maxCount = colorCounts[color];
+                dominantColor = color;
+            }
+        }
+        callback(dominantColor);
+    };
+    img.src = imageUrl;
 }
 
 function quantizeColors(imageData, numColors) {
-  let quantizedData = [];
-  let segmentSize = Math.floor(imageData.length / numColors);
-  for (let i = 0; i < imageData.length; i += segmentSize) {
-    let rgba = imageData.slice(i, i + 4);
-    quantizedData.push(rgba);
-  }
-  return quantizedData;
+    let quantizedData = [];
+    let segmentSize = Math.floor(imageData.length / numColors);
+    for (let i = 0; i < imageData.length; i += segmentSize) {
+        let rgba = imageData.slice(i, i + 4);
+        quantizedData.push(rgba);
+    }
+    return quantizedData;
 }
 
 function rgbToHex(r, g, b) {
-  return ((r << 16) | (g << 8) | b).toString(16); // yaeh lol i have no idea how this works :3
+    return ((r << 16) | (g << 8) | b).toString(16);
 }
 
-// Usage
-
 function setBackground(dominantColor) {
-  document.body.style.backgroundColor = dominantColor;
+    document.body.style.backgroundColor = dominantColor;
 }
 
 let imagy = document.querySelector("img");
-findDominantColor(
-  imagy.src,
-  function (dominantColor) {
+findDominantColor(imagy.src, (dominantColor) => {
     setBackground(dominantColor);
-  },
-  10
-); // Specify the number of colors for quantization
+}, 10);
 
 function changeImage(event) {
     event.preventDefault();
     if (link.value) {
-      let url;
-      try {
-        url = new URL(link.value);
-      } catch (error) {
-        alert("The link you provided is not valid!");
-        return;
-      }
-      if (url.protocol !== "http:" && url.protocol !== "https:") {
-        alert("CORS error! Please provide a link from the web.");
-        return;
-      }
-      img.src = link.value;
-      findDominantColor(link.value, setBackground, 10);
+        let url;
+        try {
+            url = new URL(link.value);
+        } catch (error) {
+            alert("The link you provided is not valid!");
+            return;
+        }
+        if (url.protocol !== "http:" && url.protocol !== "https:") {
+            alert("CORS error! Please provide a link from the web.");
+            return;
+        }
+        img.src = link.value;
+        findDominantColor(link.value, setBackground, 10);
     } else {
-      alert("Please provide an image link!");
-    }
+        alert("Please provide an image link!");
+    };
 }
 
 btn.addEventListener("click", changeImage);
