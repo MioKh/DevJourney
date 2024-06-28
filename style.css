@@ -7,12 +7,13 @@
 body {
   background-color: rgb(39, 39, 39);
   color: rgb(179, 179, 179);
-  height: 100vh;  
+  height: 100vh;
 }
 a {
-  color: rgb(82, 97, 255);
+  color:white;
   font-size: 1.25rem;
   font-weight: bold;
+  text-decoration: none;
 }
 
 ul {
@@ -22,7 +23,11 @@ ul {
 }
 
 li {
-  margin: 1rem;
+  padding: 1rem;
+  text-align: center;
+  list-style: none;
+  background-color: rgb(87, 140, 255);
+  border-radius: 8px;
 }
 
 .container {
@@ -33,4 +38,10 @@ li {
   gap: 1rem;
   padding: 5rem;
   font-family: Arial, sans-serif;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(200px, 300px));
+  gap: 8px;
 }
