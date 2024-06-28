@@ -8,23 +8,14 @@ Well, I already do this on my own, so I thought why not make it public.
 It also lets me share my learnings and projects with others,
 and also it documents my journey as a developer.
 
-But for now, I am not sure how to organize it properly.
-Like should I make subfiles or just make it in one file and then write the code,
-commit it, and then push it, then when I learn something new I delete the existing code
-and write the newly learned stuff and then commit and push it.
+Well funny how I still dont really know hwo to orginize this repo cause like some stuff you dont know weather you should push them or not but I will stop thinking about that and just push everything 
 
-I don't know, I am confused, I'll see what happens.
+Also I did take a bit of a break from programming life was a mess so I was a bit not consistent with uploading stuff although I was learning 
 
-If I make some intresting project I'll make a seperate folder for it.
-but for now i'll write everything it in one file.
+anyway as you can see I kinda think I suceeded with the Spotify playlist general image color thing in the [DominantColor](https://miokh.github.io/DevJourney/projects//DominantColor/domColor.html) but I still dont know how to fix the cors proplem 
+
+I actually kinda forgot about the [Animio](https://miokh.github.io/Animio/) project and that I didnt finish it ._. like I was so in fun with the fact I got it working I forgot that I should add pagination
+
+Anyway since I am back on track I am still in the odin project , while looking at ossu and the fullstackopen
 
 
-So it's been a while but trust me I was learning in those days you can see it in the repo as well.
-I didnt upload stuff cause It wasnt really uploadable ? if that make sense 
-
-currently learning react like activley i'll see what happens. and maybe make some projects using it 
-also learning tailwind css cause i am not that good with design.
-
-anyway I'll be testing like finding dominant color in an image for my other Anime fetching api thing project i am doing https://miokh.github.io/Animio i was planing on adding a backdrop image but I couldnt find a good api to find the images dynamically so i thought will might aswell do like spotify does to their playlist thing 
-
-also i was going through fullstackopen course and its very good 

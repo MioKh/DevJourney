@@ -7,8 +7,7 @@
 body {
   background-color: rgb(39, 39, 39);
   color: rgb(179, 179, 179);
-  height: 100vh;
-  /* I like dark mode */
+  height: 100vh;  
 }
 a {
   color: rgb(82, 97, 255);
