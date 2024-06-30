@@ -1,0 +1,31 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+.container{
+    display: grid;
+    grid-template: 1fr 4fr /  1fr 3fr 1fr;
+    height: 100vh;
+}
+
+header{
+    grid-column: 2/4;
+    background-color: pink;
+}
+
+
+.Lsidebar{
+    background-color: lightblue;
+    grid-row: 1/3;
+}
+
+.Rsidebar{
+    background-color: rgb(100, 198, 193);
+}
+
+.cards{
+background-color: rgb(189, 249, 189);
+}
