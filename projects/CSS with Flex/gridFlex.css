@@ -41,7 +41,7 @@ width: 70%;
   display: flex;
   gap: 3rem;
   flex-direction: column;
-  align-items: center;
+  padding: 1rem;
 }
 
 .tabs {
@@ -54,7 +54,6 @@ width: 70%;
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  align-items: center;
   font-size: 20px;
   font-weight: bold;
 }
@@ -80,4 +79,49 @@ main{
 .card{
     background-color: rgb(253, 58, 58);
     
+}
+
+.RsidebarHeader{
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.partContainer{
+    border-radius: 10px;
+    background-color: white;
+    padding: 8px;
+    margin: 8px;
+}
+
+.Anouncment{
+    padding: 8px;
+}
+
+.Anouncment p:first-child {
+    font-weight: bold;
+}
+
+.trend{
+    display: flex;
+    margin: 8px;
+}
+
+.trend img{
+    max-width: 5rem;
+    border-radius: 100px;
+}
+
+.tabs-container span{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.tabs img{
+    height: 2rem;
+}
+
+a{
+    color: black;
+    text-decoration: none;
 }
