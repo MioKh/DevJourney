@@ -63,6 +63,21 @@ width: 70%;
   background-color: rgb(100, 198, 193);
 }
 
+main{
+    display: flex;
+    flex-direction: column;
+}
+
 .cards {
   background-color: rgb(189, 249, 189);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 8px;
+  padding: 8px; 
+  flex: 1;
+}
+
+.card{
+    background-color: rgb(253, 58, 58);
+    
 }
