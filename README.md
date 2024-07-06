@@ -4,18 +4,8 @@ A repo for my learnings and projects using new skills
 
 ---
 
-Well, I already do this on my own, so I thought why not make it public.
-It also lets me share my learnings and projects with others,
-and also it documents my journey as a developer.
+This repo is supposed to be about the stuff I am learning, but I skip a lot of stuff because I feel like I would look stupid or something like that. But I was thinking that if it's a self-learning repo to myself and maybe for people who see it, then why care? I should treat it like a diary. So from now on, I will try to add everything I am learning.
 
-Well funny how I still dont really know hwo to orginize this repo cause like some stuff you dont know weather you should push them or not but I will stop thinking about that and just push everything 
+For example, I recognized that I kinda suck at converting designs into CSS and HTML, so I am taking the Frontend Mentor courses. Which kinda points you to web.dev to learn CSS and HTML. Even though I thought I knew those, a lot of the stuff I don’t know I learned, like AOM, ARIA, what semantic HTML actually does for accessibility, a lot more about metadata stuff, open graph, and a lot of other things. But I never added them here or even talked about them that I learned them. So yeah, from now on, I will make maybe a separate folder of what I learned each day.
 
-Also I did take a bit of a break from programming life was a mess so I was a bit not consistent with uploading stuff although I was learning 
-
-anyway as you can see I kinda think I suceeded with the Spotify playlist general image color thing in the [DominantColor](https://miokh.github.io/DevJourney/projects//DominantColor/domColor.html) but I still dont know how to fix the cors proplem 
-
-I actually kinda forgot about the [Animio](https://miokh.github.io/Animio/) project and that I didnt finish it ._. like I was so in fun with the fact I got it working I forgot that I should add pagination
-
-Anyway since I am back on track I am still in the odin project , while looking at ossu and the fullstackopen
-
-
+Or just make a file with some examples if they are very small after all you learn by making 
