@@ -4,6 +4,16 @@
   padding: 0;
 }
 
+:root {
+  --primary-color: #1b1b1c;
+  --secondary-color: #ffff;
+  --bg-color: #101014;
+}
+
+body {
+  background-color: var(--bg-color);
+}
+
 .container {
   display: grid;
   grid-template: 1fr 5fr / 1fr 3fr 1fr;
@@ -15,7 +25,7 @@ header {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-column: 2/4;
-
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 1);
 }
 
 .h-top,
@@ -25,18 +35,35 @@ header {
   grid-template-columns: 3fr 2fr repeat(3, 1fr);
 }
 
+.h-bottom{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.user{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user img{
+  border-radius: 50%;
+}
+
 .searchInput {
   grid-column: 1/3;
   display: flex;
   align-items: center;
 }
 
-.searchInput input{
-width: 70%;
+.searchInput input {
+  width: 70%;
 }
 
 .Lsidebar {
-  background-color: #1992d4;
+  background-color: var(--primary-color);
   grid-row: 1/3;
   display: flex;
   gap: 3rem;
@@ -58,94 +85,106 @@ width: 70%;
   font-weight: bold;
 }
 
-main{
-    display: flex;
-    flex-direction: column;
+main {
+  display: flex;
+  flex-direction: column;
 }
 
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  
+
   gap: 8px;
-  padding: 8px; 
-  flex: 1;
+  padding: 8px;
 }
 
-.card{
-    background-color: rgb(253, 58, 58);
-    border-radius: 5px;
-    border-left: 5px;
-  
+.card {
+  background-color: var(--primary-color);
+  border-radius: 5px;
+  border-left: 5px;
+  padding: 8px;
+  min-height: 200px;
 }
 
-.RsidebarHeader{
-    font-size: 1.25rem;
-    font-weight: bold;
+.RsidebarHeader {
+  font-size: 1.25rem;
+  font-weight: bold;
 }
 
-.partContainer{
-    border-radius: 10px;
-    background-color: white;
-    padding: 8px;
-    margin: 8px;
+.partContainer {
+  border-radius: 10px;
+  background-color: var(--primary-color);
+  padding: 8px;
+  margin: 8px;
 }
 
-.Anouncment{
-    padding: 8px;
+.Anouncment {
+  padding: 8px;
 }
 
 .Anouncment p:first-child {
-    font-weight: bold;
+  font-weight: bold;
 }
 
-.trend{
-    display: flex;
-    margin: 8px;
+.trend {
+  display: flex;
+  margin: 8px;
+  background-color: var(--primary-color);
 }
 
-.trend img{
-    max-width: 5rem;
-    border-radius: 100px;
+.trend img {
+  max-width: 5rem;
+  border-radius: 100px;
 }
 
-.tabs-container span{
-    display: flex;
-    align-items: center;
-    gap: 5px;
+.tabs-container span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
-.tabs img , .h-top img{
-    height: 2rem;
+.tabs img,
+.h-top img {
+  height: 2rem;
 }
 
-.h-bottom img{ 
-    height: 5rem;
+.h-bottom img {
+  height: 5rem;
 }
 
-a{
-    color: black;
-    text-decoration: none;
+a {
+  color: var(--secondary-color);
+  text-decoration: none;
 }
 
-input{
-    border-radius: 10px;
-    border:none;
-    background: rgb(206, 206, 206);
-    height: 1.5rem;
+p,
+h2,
+h1 {
+  color: var(--secondary-color);
 }
 
-button{
-    background-color: #1992d4;
-    border-style: none;
-    border-radius: 10px;
-    font-weight: bold;
-    color: white;
-    height:2rem;
-    margin:8px;
+input {
+  border-radius: 10px;
+  border: none;
+  background: rgb(206, 206, 206);
+  height: 1.5rem;
 }
 
-.profile{
+button {
+  background-color: #1992d4;
+  color: var(--secondary-color);
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-weight: bold;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.profile {
   grid-column: 3/6;
   display: flex;
   align-items: center;
