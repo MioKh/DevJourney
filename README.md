@@ -8,4 +8,10 @@ This repo is supposed to be about the stuff I am learning, but I skip a lot of s
 
 For example, I recognized that I kinda suck at converting designs into CSS and HTML, so I am taking the Frontend Mentor courses. Which kinda points you to web.dev to learn CSS and HTML. Even though I thought I knew those, a lot of the stuff I don’t know I learned, like AOM, ARIA, what semantic HTML actually does for accessibility, a lot more about metadata stuff, open graph, and a lot of other things. But I never added them here or even talked about them that I learned them. So yeah, from now on, I will make maybe a separate folder of what I learned each day.
 
-Or just make a file with some examples if they are very small after all you learn by making 
+Or just make a file with some examples if they are very small after all you learn by making  
+
+### Re-format the whole website layout
+i am reading refactoring ai an i belive its from the people that made tailwind 
+on how to systematically make good layouts for non-designers 
+sooo while reading it i will start to try to make my websites look better and more beautiful
+
