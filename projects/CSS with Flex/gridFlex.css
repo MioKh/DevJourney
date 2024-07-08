@@ -8,6 +8,7 @@
   display: grid;
   grid-template: 1fr 5fr / 1fr 3fr 1fr;
   height: 100vh;
+  gap: 8px;
 }
 
 header {
@@ -63,9 +64,9 @@ main{
 }
 
 .cards {
-  background-color: rgb(189, 249, 189);
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  
   gap: 8px;
   padding: 8px; 
   flex: 1;
@@ -73,7 +74,9 @@ main{
 
 .card{
     background-color: rgb(253, 58, 58);
-    
+    border-radius: 5px;
+    border-left: 5px;
+  
 }
 
 .RsidebarHeader{
@@ -126,13 +129,27 @@ a{
 }
 
 input{
-    border-radius: 5px;
+    border-radius: 10px;
+    border:none;
+    background: rgb(206, 206, 206);
+    height: 1.5rem;
 }
 
 button{
     background-color: #1992d4;
     border-style: none;
     border-radius: 10px;
-    height:3rem;
+    font-weight: bold;
+    color: white;
+    height:2rem;
     margin:8px;
+}
+
+.profile{
+  grid-column: 3/6;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  justify-content: flex-end;
+  margin-right: 4rem;
 }
