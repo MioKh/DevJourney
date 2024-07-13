@@ -130,6 +130,8 @@ main {
   display: flex;
   margin: 8px;
   background-color: var(--primary-color);
+  align-items: center;
+  gap: 8px;
 }
 
 .trend img {
