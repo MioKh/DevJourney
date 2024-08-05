@@ -1,0 +1,12 @@
+/* css/color1.css */
+.color1 {
+    background-color: lightblue;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box; /* Ensures padding/borders are included in width/height */
+    overflow: hidden; /* Prevents overflow */
+  }
+  

@@ -1,0 +1,10 @@
+/* css/color2.css */
+.color2 {
+    background-color: lightcoral;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  

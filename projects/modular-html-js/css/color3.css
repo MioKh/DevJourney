@@ -1,0 +1,9 @@
+.color3 {
+    background-color: lightgreen;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
